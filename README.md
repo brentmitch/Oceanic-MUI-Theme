@@ -1,4 +1,4 @@
-# OCEANIC THEME
+# Oceanic MUI Theme
 
 A bright ocean day inspired React Material UI theme.
 
