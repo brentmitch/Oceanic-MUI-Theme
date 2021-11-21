@@ -37,6 +37,7 @@ let oceanicTheme = createTheme({
 	shape: {
 		borderRadius: 12,
 	},
+	spacing: 6,
 	typography: {
 		h1: {
 			fontFamily: '"Sora", "Roboto", "Helvetica", "Arial", sans-serif',
@@ -124,4 +125,3 @@ let oceanicTheme = createTheme({
 oceanicTheme = createTheme(oceanicTheme);
 
 export default oceanicTheme;
-//MuiSwitch-switchBase MuiSwitch-colorPrimary MuiButtonBase-root MuiSwitch-switchBase MuiSwitch-colorPrimary PrivateSwitchBase-root Mui-checked css-19fhn3q-MuiButtonBase-root-MuiSwitch-switchBase

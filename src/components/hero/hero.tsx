@@ -9,7 +9,9 @@ const Hero: React.FC<{}> = () => {
 		<Box
 			sx={{
 				width: '100%',
-				height: 400,
+				marginTop: '-80px',
+				paddingTop: '80px',
+				height: '360px',
 				background:
 					'linear-gradient(90deg, rgba(207,234,251,1) 0%, rgba(191,238,236,1) 100%)',
 			}}
@@ -29,7 +31,7 @@ const Hero: React.FC<{}> = () => {
 						sx={{
 							width: '50%',
 							display: 'flex',
-							marginTop: '100px',
+							marginTop: '60px',
 							flexDirection: 'column',
 						}}
 					>

@@ -1,9 +1,9 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 import { AppBar, Container, Typography } from '@mui/material';
 import useScrollTrigger from '@mui/material/useScrollTrigger';
 
 interface Props {
-	window?: () => Window;
 	children: React.ReactElement;
 }
 
@@ -20,6 +20,8 @@ function AppBarStylesScroll(props: Props) {
 		sx: trigger
 			? {
 					background: 'hsla(0, 0%, 100%, 1)',
+					boxShadow:
+						'hsla(211, 86%, 65%, 0.4) 0px 10px 15px -10px, hsla(178, 100%, 20%, 0.5) 0px 10px 30px -10px',
 					paddingTop: '10px',
 					paddingBottom: '10px',
 					transition: 'all 0.25s ease-out',
@@ -28,7 +30,7 @@ function AppBarStylesScroll(props: Props) {
 					background: 'transparent',
 					paddingTop: '20px',
 					paddingBottom: '20px',
-					transition: 'all 0.25s ease-out',
+					transition: 'all 0.35s ease-in',
 			  },
 	});
 }
@@ -40,6 +42,11 @@ const Header: React.FC = () => {
 				<AppBar position='fixed'>
 					<Typography variant='h4' component='h1' color='black'>
 						<Container>Oceanic</Container>
+						<nav>
+							<Link to='/'>Home</Link>
+							<Link to='/about'>About</Link>
+							<Link to='/contact'>Contact</Link>
+						</nav>
 					</Typography>
 				</AppBar>
 			</AppBarStylesScroll>
