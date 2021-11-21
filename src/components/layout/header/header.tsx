@@ -1,8 +1,15 @@
 import React from 'react';
-import { Link } from 'react-router-dom';
-import { AppBar, Container, Typography } from '@mui/material';
+import {
+	AppBar,
+	Container,
+	Typography,
+	useMediaQuery,
+	useTheme,
+} from '@mui/material';
 import useScrollTrigger from '@mui/material/useScrollTrigger';
 
+import NavLargeScreen from '../nav-large-screen/nav-large-screen';
+import NavSmallScreen from '../nav-small-screen/nav-small-screen';
 interface Props {
 	children: React.ReactElement;
 }
@@ -36,18 +43,19 @@ function AppBarStylesScroll(props: Props) {
 }
 
 const Header: React.FC = () => {
+	const theme = useTheme();
+	const isSmallScreen = useMediaQuery(theme.breakpoints.down('md'));
 	return (
 		<React.Fragment>
 			<AppBarStylesScroll>
 				<AppBar position='fixed'>
-					<Typography variant='h4' component='h1' color='black'>
-						<Container>Oceanic</Container>
-						<nav>
-							<Link to='/'>Home</Link>
-							<Link to='/about'>About</Link>
-							<Link to='/contact'>Contact</Link>
-						</nav>
-					</Typography>
+					<Container>
+						{isSmallScreen && <NavSmallScreen />}
+						<Typography variant='h4' component='h1' color='black'>
+							Oceanic
+						</Typography>
+						{!isSmallScreen && <NavLargeScreen />}
+					</Container>
 				</AppBar>
 			</AppBarStylesScroll>
 		</React.Fragment>
