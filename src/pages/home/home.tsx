@@ -1,4 +1,3 @@
-import { Link } from 'react-router-dom';
 import {
 	Box,
 	Button,
@@ -15,17 +14,13 @@ import {
 } from '@mui/material';
 import Hero from '../../components/hero/hero';
 
-function Home() {
+const Home: React.FC = () => {
 	const label = { inputProps: { 'aria-label': 'Checkbox demo' } };
 	const selectValue = '';
 	return (
 		<>
 			<Hero />
 			<Container>
-				<nav>
-					<Link to='/about'>About</Link>
-				</nav>
-
 				<Stack spacing={2} direction='row'>
 					<Button variant='text'>Text</Button>
 					<Button variant='contained'>Contained</Button>
@@ -170,5 +165,5 @@ function Home() {
 			</Container>
 		</>
 	);
-}
+};
 export default Home;

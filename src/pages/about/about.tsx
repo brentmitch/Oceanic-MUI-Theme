@@ -1,6 +1,6 @@
 import { Box, Container, Typography } from '@mui/material';
 
-function About() {
+const About: React.FC = () => {
 	return (
 		<Container>
 			<Box sx={{ width: '100%', maxWidth: 500 }}>
@@ -56,5 +56,5 @@ function About() {
 			</Box>
 		</Container>
 	);
-}
+};
 export default About;

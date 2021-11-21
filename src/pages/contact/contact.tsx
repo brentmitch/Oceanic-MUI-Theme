@@ -12,7 +12,7 @@ import {
 	TextField,
 } from '@mui/material';
 
-function Contact() {
+const Contact: React.FC = () => {
 	const label = { inputProps: { 'aria-label': 'Checkbox demo' } };
 	const selectValue = '';
 	return (
@@ -84,5 +84,5 @@ function Contact() {
 			</Box>
 		</Container>
 	);
-}
+};
 export default Contact;
