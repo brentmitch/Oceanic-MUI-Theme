@@ -1,6 +1,7 @@
 import React from 'react';
 import {
 	AppBar,
+	Box,
 	Container,
 	Typography,
 	useMediaQuery,
@@ -50,11 +51,25 @@ const Header: React.FC = () => {
 			<AppBarStylesScroll>
 				<AppBar position='fixed'>
 					<Container>
-						{isSmallScreen && <NavSmallScreen />}
-						<Typography variant='h4' component='h1' color='black'>
-							Oceanic
-						</Typography>
-						{!isSmallScreen && <NavLargeScreen />}
+						<Box
+							sx={{
+								display: 'flex',
+								justifyContent: 'space-between',
+							}}
+						>
+							<Typography
+								variant='h4'
+								component='h1'
+								color='black'
+							>
+								Oceanic
+							</Typography>
+							{isSmallScreen ? (
+								<NavSmallScreen />
+							) : (
+								<NavLargeScreen />
+							)}
+						</Box>
 					</Container>
 				</AppBar>
 			</AppBarStylesScroll>

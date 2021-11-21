@@ -1,6 +1,6 @@
 import { useState } from 'react';
-import { Link } from 'react-router-dom';
 import {
+	Button,
 	Drawer,
 	IconButton,
 	List,
@@ -14,21 +14,25 @@ const NavSmallScreen: React.FC = () => {
 	const [openDrawer, setOpenDrawer] = useState(false);
 	return (
 		<>
-			<Drawer open={openDrawer} onClose={() => setOpenDrawer(false)}>
+			<Drawer
+				anchor='right'
+				open={openDrawer}
+				onClose={() => setOpenDrawer(false)}
+			>
 				<List>
 					<ListItem onClick={() => setOpenDrawer(false)}>
 						<ListItemText>
-							<Link to='/'>Home</Link>
+							<Button href='/'>Home</Button>
 						</ListItemText>
 					</ListItem>
 					<ListItem onClick={() => setOpenDrawer(false)}>
 						<ListItemText>
-							<Link to='/about'>About</Link>
+							<Button href='/about'>About</Button>
 						</ListItemText>
 					</ListItem>
 					<ListItem onClick={() => setOpenDrawer(false)}>
 						<ListItemText>
-							<Link to='/contact'>Contact</Link>
+							<Button href='/contact'>Contact</Button>
 						</ListItemText>
 					</ListItem>
 				</List>

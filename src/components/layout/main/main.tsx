@@ -2,7 +2,7 @@ import React from 'react';
 import { styled } from '@mui/system';
 
 const MainWrapper = styled('main')({
-	paddingTop: '80px',
+	paddingTop: '100px',
 });
 
 const Main: React.FC = ({ children }) => {
