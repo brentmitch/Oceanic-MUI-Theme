@@ -1,14 +1,30 @@
 import { useState } from 'react';
 import {
-	Button,
 	Drawer,
 	IconButton,
 	List,
 	ListItem,
+	ListItemButton,
 	ListItemText,
 } from '@mui/material';
+import { styled } from '@mui/system';
 
 import MenuIcon from '@mui/icons-material/Menu';
+
+const MenuWrapper = styled('nav')(({ theme }) => ({
+	width: '50vw',
+	[theme.breakpoints.down('sm')]: {
+		width: '90vw',
+	},
+	'&  li': {
+		paddingTop: 0,
+		paddingBottom: 0,
+	},
+	'& a, button': {
+		fontFamily: '"Sora", "Roboto", "Helvetica", "Arial", sans-serif',
+		fontWeight: 500,
+	},
+}));
 
 const NavSmallScreen: React.FC = () => {
 	const [openDrawer, setOpenDrawer] = useState(false);
@@ -19,23 +35,31 @@ const NavSmallScreen: React.FC = () => {
 				open={openDrawer}
 				onClose={() => setOpenDrawer(false)}
 			>
-				<List>
-					<ListItem onClick={() => setOpenDrawer(false)}>
-						<ListItemText>
-							<Button href='/'>Home</Button>
-						</ListItemText>
-					</ListItem>
-					<ListItem onClick={() => setOpenDrawer(false)}>
-						<ListItemText>
-							<Button href='/about'>About</Button>
-						</ListItemText>
-					</ListItem>
-					<ListItem onClick={() => setOpenDrawer(false)}>
-						<ListItemText>
-							<Button href='/contact'>Contact</Button>
-						</ListItemText>
-					</ListItem>
-				</List>
+				<MenuWrapper>
+					<List>
+						<ListItem onClick={() => setOpenDrawer(false)}>
+							<ListItemText>
+								<ListItemButton component='a' href='/'>
+									Home
+								</ListItemButton>
+							</ListItemText>
+						</ListItem>
+						<ListItem onClick={() => setOpenDrawer(false)}>
+							<ListItemText>
+								<ListItemButton component='a' href='/about'>
+									About
+								</ListItemButton>
+							</ListItemText>
+						</ListItem>
+						<ListItem onClick={() => setOpenDrawer(false)}>
+							<ListItemText>
+								<ListItemButton component='a' href='/contact'>
+									Contact
+								</ListItemButton>
+							</ListItemText>
+						</ListItem>
+					</List>
+				</MenuWrapper>
 			</Drawer>
 			<IconButton onClick={() => setOpenDrawer(!openDrawer)}>
 				<MenuIcon />
