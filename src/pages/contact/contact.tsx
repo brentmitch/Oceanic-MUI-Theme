@@ -1,88 +1,40 @@
-import {
-	Box,
-	Button,
-	Checkbox,
-	Container,
-	FormControl,
-	InputLabel,
-	MenuItem,
-	Select,
-	Stack,
-	Switch,
-	TextField,
-} from '@mui/material';
+import { Container, Grid, Typography } from '@mui/material';
+import { styled } from '@mui/system';
+import ContactForm from './contact-form';
+import contactImgSrc from '.././../images/dog-beach-ave-calvar-unsplash.jpg';
 
 const Contact: React.FC = () => {
-	const label = { inputProps: { 'aria-label': 'Checkbox demo' } };
-	const selectValue = '';
+	const ContactImage = styled('img')({
+		margin: 0,
+		padding: 0,
+		width: '100%',
+		borderRadius: 12,
+	});
+
 	return (
-		<Container>
-			<Stack spacing={2} direction='row'>
-				<Button variant='text'>Text</Button>
-				<Button variant='contained'>Contained</Button>
-				<Button variant='contained' sx={{ boxShadow: 0 }}>
-					Contained no shadow
-				</Button>
-				<Button variant='outlined'>Outlined</Button>
-
-				<Button color='secondary' variant='text'>
-					Text
-				</Button>
-				<Button color='secondary' variant='contained'>
-					Contained
-				</Button>
-				<Button color='secondary' variant='outlined'>
-					Outlined
-				</Button>
-			</Stack>
-
-			<Box sx={{ width: '100%', maxWidth: 500 }}>
-				<TextField
-					id='outlined-basic'
-					label='Outlined'
-					variant='outlined'
-				/>
-				<TextField id='filled-basic' label='Filled' variant='filled' />
-				<TextField
-					id='standard-basic'
-					label='Standard'
-					variant='standard'
-				/>
-			</Box>
-
-			<Box sx={{ width: '100%', maxWidth: 500 }}>
-				<Checkbox {...label} defaultChecked />
-				<Checkbox {...label} />
-				<Checkbox {...label} disabled />
-				<Checkbox {...label} disabled checked />
-			</Box>
-
-			<Box>
-				<Switch {...label} defaultChecked />
-				<Switch {...label} defaultChecked color='secondary' />
-			</Box>
-
-			<Box sx={{ width: '100%', maxWidth: 500 }}>
-				<FormControl sx={{ margin: 1, minWidth: 120 }}>
-					<InputLabel id='demo-simple-select-standard-label'>
-						Test
-					</InputLabel>
-					<Select
-						labelId='demo-simple-select-standard-label'
-						id='demo-simple-select-standard'
-						value={selectValue}
-						label='Test'
-					>
-						<MenuItem value=''>
-							<em>None</em>
-						</MenuItem>
-						<MenuItem value={10}>Ten</MenuItem>
-						<MenuItem value={20}>Twenty</MenuItem>
-						<MenuItem value={30}>Thirty</MenuItem>
-					</Select>
-				</FormControl>
-			</Box>
-		</Container>
+		<>
+			<Container>
+				<Grid container spacing={6}>
+					<Grid item xs={4}>
+						<ContactImage src={contactImgSrc}></ContactImage>
+					</Grid>
+					<Grid item xs={8}>
+						<Typography variant='h2' component='h2'>
+							Hello...
+						</Typography>
+						<Typography
+							component='p'
+							sx={{ marginTop: 4, marginBottom: 6 }}
+						>
+							Have a question? We have answers. Ask us about your
+							past purchases, your account, or where's the best
+							place to chase seagulls...we're here to help!
+						</Typography>
+						<ContactForm />
+					</Grid>
+				</Grid>
+			</Container>
+		</>
 	);
 };
 export default Contact;

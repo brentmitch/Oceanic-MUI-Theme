@@ -11,6 +11,7 @@ import '@fontsource/sora/400.css';
 import '@fontsource/sora/500.css';
 import '@fontsource/sora/700.css';
 
+import Footer from './components/layout/footer/footer';
 import Header from './components/layout/header/header';
 import Main from './components/layout/main/main';
 import Home from './pages/home/home';
@@ -28,6 +29,7 @@ function App() {
 					<Route path='contact' element={<Contact />} />
 				</Routes>
 			</Main>
+			<Footer />
 		</ThemeProvider>
 	);
 }

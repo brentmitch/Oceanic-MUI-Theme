@@ -1,4 +1,5 @@
 import React from 'react';
+import { styled } from '@mui/system';
 import {
 	AppBar,
 	Box,
@@ -8,9 +9,9 @@ import {
 	useTheme,
 } from '@mui/material';
 import useScrollTrigger from '@mui/material/useScrollTrigger';
-
 import NavLargeScreen from '../nav-large-screen/nav-large-screen';
 import NavSmallScreen from '../nav-small-screen/nav-small-screen';
+import logo from '../../../images/Turtle-Look.svg';
 interface Props {
 	children: React.ReactElement;
 }
@@ -43,6 +44,11 @@ function AppBarStylesScroll(props: Props) {
 	});
 }
 
+const LogoImage = styled('img')({
+	width: '60px',
+	marginRight: '8px',
+});
+
 const Header: React.FC = () => {
 	const theme = useTheme();
 	const isSmallScreen = useMediaQuery(theme.breakpoints.down('md'));
@@ -57,13 +63,22 @@ const Header: React.FC = () => {
 								justifyContent: 'space-between',
 							}}
 						>
-							<Typography
-								variant='h4'
-								component='h1'
-								color='black'
+							<Box
+								sx={{
+									display: 'flex',
+									justifyContent: 'flex-start',
+									alignItems: 'center',
+								}}
 							>
-								Oceanic
-							</Typography>
+								<LogoImage src={logo} alt='Oceanic' />
+								<Typography
+									variant='h4'
+									component='h1'
+									color='black'
+								>
+									Oceanic
+								</Typography>
+							</Box>
 							{isSmallScreen ? (
 								<NavSmallScreen />
 							) : (
