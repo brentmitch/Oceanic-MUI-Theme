@@ -1,32 +1,25 @@
 import React from 'react';
-import { styled } from '@mui/system';
-import {
-	AppBar,
-	Box,
-	Container,
-	Typography,
-	useMediaQuery,
-	useTheme,
-} from '@mui/material';
+import { AppBar, Box, Container, useMediaQuery, useTheme } from '@mui/material';
 import useScrollTrigger from '@mui/material/useScrollTrigger';
+import HeaderLogo from './header-logo';
 import NavLargeScreen from '../nav-large-screen/nav-large-screen';
 import NavSmallScreen from '../nav-small-screen/nav-small-screen';
-import logo from '../../../images/Turtle-Look.svg';
+
 interface Props {
 	children: React.ReactElement;
 }
 
-function AppBarStylesScroll(props: Props) {
+function AppBarStylesOnScroll(props: Props) {
 	const { children } = props;
 
-	const trigger = useScrollTrigger({
+	const pageScrollTrigger = useScrollTrigger({
 		disableHysteresis: true,
 		threshold: 0,
 	});
 
 	return React.cloneElement(children, {
-		elevation: trigger ? 2 : 0,
-		sx: trigger
+		elevation: pageScrollTrigger ? 2 : 0,
+		sx: pageScrollTrigger
 			? {
 					background: 'hsla(0, 0%, 100%, 1)',
 					boxShadow:
@@ -44,41 +37,22 @@ function AppBarStylesScroll(props: Props) {
 	});
 }
 
-const LogoImage = styled('img')({
-	width: '60px',
-	marginRight: '8px',
-});
-
 const Header: React.FC = () => {
 	const theme = useTheme();
 	const isSmallScreen = useMediaQuery(theme.breakpoints.down('md'));
 	return (
 		<React.Fragment>
-			<AppBarStylesScroll>
+			<AppBarStylesOnScroll>
 				<AppBar position='fixed'>
 					<Container>
 						<Box
 							sx={{
 								display: 'flex',
 								justifyContent: 'space-between',
+								alignItems: 'center',
 							}}
 						>
-							<Box
-								sx={{
-									display: 'flex',
-									justifyContent: 'flex-start',
-									alignItems: 'center',
-								}}
-							>
-								<LogoImage src={logo} alt='Oceanic' />
-								<Typography
-									variant='h4'
-									component='h1'
-									color='black'
-								>
-									Oceanic
-								</Typography>
-							</Box>
+							<HeaderLogo />
 							{isSmallScreen ? (
 								<NavSmallScreen />
 							) : (
@@ -87,7 +61,7 @@ const Header: React.FC = () => {
 						</Box>
 					</Container>
 				</AppBar>
-			</AppBarStylesScroll>
+			</AppBarStylesOnScroll>
 		</React.Fragment>
 	);
 };
