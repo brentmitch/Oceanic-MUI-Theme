@@ -37,7 +37,7 @@ const Hero: React.FC<{}> = () => {
 						}}
 					>
 						<Typography variant='h3' component='h1' gutterBottom>
-							Numerous Oceanic wonders await
+							Numerous oceanic wonders await
 						</Typography>
 						<HeroSearchInput />
 					</Box>

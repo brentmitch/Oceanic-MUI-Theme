@@ -29,10 +29,11 @@ let oceanicTheme = createTheme({
 			contrastText: 'hsla(0, 0%, 0%, 0.87)',
 		},
 		text: {
-			primary: 'hsla(0, 0%, 0%, 0.87)',
-			secondary: 'hsla(0, 0%, 0%, 0.54)',
-			disabled: 'hsla(0, 0%, 0%, 0.38)',
+			primary: 'hsla(204, 100%, 8%, 0.87)',
+			secondary: 'hsla(204, 100%, 8%, 0.54)',
+			disabled: 'hsla(204, 100%, 8%, 0.38)',
 		},
+		divider: 'hsl(202, 100%, 10%)',
 	},
 	shape: {
 		borderRadius: 12,
@@ -100,6 +101,35 @@ let oceanicTheme = createTheme({
 					'&.MuiButton-containedSecondary': {
 						background:
 							'linear-gradient(30deg, rgba(1, 150, 145, 1) 15%, rgba(83, 199, 193, 1) 90%)',
+					},
+				},
+			},
+		},
+		MuiFilledInput: {
+			styleOverrides: {
+				root: {
+					backgroundColor: 'hsla(211, 86%, 28%, 0.08)',
+					'&:hover': {
+						backgroundColor: 'hsla(211, 86%, 28%, 0.12)',
+					},
+				},
+			},
+		},
+		MuiFormLabel: {
+			styleOverrides: {
+				root: {
+					color: 'hsla(211, 86%, 28%, 0.68)',
+				},
+			},
+		},
+		MuiOutlinedInput: {
+			styleOverrides: {
+				root: {
+					'& .MuiOutlinedInput-notchedOutline': {
+						borderColor: 'hsla(211, 86%, 28%, 0.23)',
+					},
+					'& .MuiSvgIcon-root': {
+						color: 'hsla(211, 86%, 28%, 0.58)',
 					},
 				},
 			},

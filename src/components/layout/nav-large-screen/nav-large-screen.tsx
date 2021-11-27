@@ -42,7 +42,7 @@ const NavListItem = styled('li')(({ theme }) => ({
 		borderRadius: 20,
 		fontSize: 16,
 		textTransform: 'capitalize',
-		color: theme.palette.common.black,
+		color: theme.palette.text.primary,
 		'&:hover': {
 			background: alpha(theme.palette.primary.main, 0.08),
 		},

@@ -23,7 +23,7 @@ const HeaderLogo: React.FC = () => {
 				}}
 			>
 				<LogoImage src={logo} alt='Oceanic' />
-				<Typography variant='h4' component='h1' color='black'>
+				<Typography variant='h4' component='h1' color='text.primary'>
 					Oceanic
 				</Typography>
 			</Box>
