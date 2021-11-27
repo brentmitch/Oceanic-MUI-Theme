@@ -22,9 +22,9 @@ const HeroSearchInput: React.FC<{}> = () => {
 					<SearchIcon />
 				</InputAdornment>
 			}
-			placeholder='Search for something'
+			placeholder='Search for a wonder'
 			inputProps={{
-				'aria-label': 'Search for something',
+				'aria-label': 'Search for a wonder',
 			}}
 		/>
 	);

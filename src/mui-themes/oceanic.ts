@@ -73,6 +73,21 @@ let oceanicTheme = createTheme({
 		},
 	},
 	components: {
+		MuiCssBaseline: {
+			styleOverrides: {
+				body: {
+					height: '100vh',
+					backgroundColor: 'hsla(210, 2%, 99%, 1)',
+				},
+				'#root': {
+					display: 'flex',
+					flexDirection: 'column',
+					margin: '0',
+					padding: '0',
+					height: '100vh',
+				},
+			},
+		},
 		MuiButton: {
 			styleOverrides: {
 				root: {

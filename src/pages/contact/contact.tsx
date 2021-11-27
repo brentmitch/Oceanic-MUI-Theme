@@ -26,9 +26,10 @@ const Contact: React.FC = () => {
 							component='p'
 							sx={{ marginTop: 4, marginBottom: 6 }}
 						>
-							Have a question? We have answers. Ask us about your
-							past purchases, your account, or where's the best
-							place to chase seagulls...we're here to help!
+							Have a question? We have answers. Whether you want
+							to know about past purchases, your account, or
+							where's the best place to chase seagulls...we're
+							here to help!
 						</Typography>
 						<ContactForm />
 					</Grid>

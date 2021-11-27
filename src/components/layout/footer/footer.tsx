@@ -1,18 +1,18 @@
 import React from 'react';
-import { styled } from '@mui/system';
 import { Box, Container, Typography } from '@mui/material';
+import { styled } from '@mui/system';
 import footerBackground from '../../../images/footer-waves.png';
 import logo from '../../../images/Turtle-Look.svg';
 
-const FooterBackground = styled('div')({
-	margin: 0,
+const FooterContainer = styled('footer')({
+	backgroundColor: '#fcf3ed',
+	backgroundImage: `url(${footerBackground})`,
+	backgroundRepeat: 'no-repeat',
+	backgroundSize: '100%',
+	margin: 'auto 0 0 0',
+	minHeight: '300px',
 	padding: '140px 0 10px 0',
 	width: '100%',
-	minHeight: '300px',
-	backgroundColor: '#fcf3ed',
-	backgroundSize: '100%',
-	backgroundRepeat: 'no-repeat',
-	backgroundImage: `url(${footerBackground})`,
 });
 
 function Copyright() {
@@ -24,13 +24,13 @@ function Copyright() {
 }
 
 const LogoImage = styled('img')({
-	width: '40px',
 	marginRight: '4px',
+	width: '40px',
 });
 
 const Footer: React.FC = () => {
 	return (
-		<FooterBackground>
+		<FooterContainer>
 			<Container>
 				<Box sx={{ display: 'flex', alignItems: 'center' }}>
 					<LogoImage src={logo} alt='Oceanic' />
@@ -44,7 +44,7 @@ const Footer: React.FC = () => {
 				</Box>
 				<Copyright />
 			</Container>
-		</FooterBackground>
+		</FooterContainer>
 	);
 };
 
