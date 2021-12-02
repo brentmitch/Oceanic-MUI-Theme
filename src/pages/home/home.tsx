@@ -3,10 +3,6 @@ import {
 	Button,
 	Checkbox,
 	Container,
-	FormControl,
-	InputLabel,
-	MenuItem,
-	Select,
 	Stack,
 	Switch,
 	TextField,
@@ -16,82 +12,99 @@ import Hero from '../../components/hero/hero';
 
 const Home: React.FC = () => {
 	const label = { inputProps: { 'aria-label': 'Checkbox demo' } };
-	const selectValue = '';
+
 	return (
 		<>
 			<Hero />
 			<Container>
-				<Stack spacing={2} direction='row'>
-					<Button variant='text'>Text</Button>
-					<Button variant='contained'>Contained</Button>
-					<Button variant='contained' sx={{ boxShadow: 0 }}>
-						Contained no shadow
-					</Button>
-					<Button variant='outlined'>Outlined</Button>
-
-					<Button color='secondary' variant='text'>
-						Text
-					</Button>
-					<Button color='secondary' variant='contained'>
-						Contained
-					</Button>
-					<Button color='secondary' variant='outlined'>
-						Outlined
-					</Button>
-				</Stack>
-
-				<Box sx={{ width: '100%', maxWidth: 500 }}>
-					<TextField
-						id='outlined-basic'
-						label='Outlined'
-						variant='outlined'
-					/>
-					<TextField
-						id='filled-basic'
-						label='Filled'
-						variant='filled'
-					/>
-					<TextField
-						id='standard-basic'
-						label='Standard'
-						variant='standard'
-					/>
+				<Box sx={{ width: '100%', margin: 2 }}>
+					<Stack spacing={2} direction='row'>
+						<Button variant='text'>Text</Button>
+						<Button variant='contained'>Contained</Button>
+						<Button variant='outlined'>Outlined</Button>
+						<Button variant='contained' sx={{ boxShadow: 0 }}>
+							Contained no shadow
+						</Button>
+					</Stack>
 				</Box>
 
-				<Box sx={{ width: '100%', maxWidth: 500 }}>
+				<Box sx={{ width: '100%', margin: 2 }}>
+					<Stack spacing={2} direction='row'>
+						<Button variant='text'>Text</Button>
+						<Button variant='contained' color='secondary'>
+							Contained
+						</Button>
+						<Button variant='outlined' color='secondary'>
+							Outlined
+						</Button>
+					</Stack>
+				</Box>
+
+				<Box sx={{ width: '100%', margin: 2 }}>
+					<Stack spacing={2} direction='row'>
+						<Button variant='text' color='error'>
+							Text
+						</Button>
+						<Button variant='contained' color='error'>
+							Contained
+						</Button>
+
+						<Button variant='outlined' color='error'>
+							Outlined
+						</Button>
+					</Stack>
+				</Box>
+				<Box sx={{ width: '100%', margin: 2 }}>
+					<Typography sx={{ fontWeight: 'bold' }}>
+						Custom Variants
+					</Typography>
+					<Stack spacing={2} direction='row'>
+						<Button variant='square'>Square Variant</Button>
+						<Button variant='square' color='secondary'>
+							Square Variant Secondary
+						</Button>
+						<Button variant='square' color='error'>
+							Square Variant Error
+						</Button>
+					</Stack>
+				</Box>
+
+				<Box sx={{ width: '100%', maxWidth: 500, margin: 2 }}>
+					<Typography sx={{ fontWeight: 'bold' }}>
+						TextField
+					</Typography>
+					<Stack spacing={2} direction='row'>
+						<TextField
+							id='outlined-basic'
+							label='Outlined'
+							variant='outlined'
+						/>
+						<TextField
+							id='filled-basic'
+							label='Filled'
+							variant='filled'
+						/>
+						<TextField
+							id='standard-basic'
+							label='Standard'
+							variant='standard'
+						/>
+					</Stack>
+				</Box>
+
+				<Box sx={{ width: '100%', maxWidth: 500, margin: 2 }}>
 					<Checkbox {...label} defaultChecked />
 					<Checkbox {...label} />
 					<Checkbox {...label} disabled />
 					<Checkbox {...label} disabled checked />
 				</Box>
 
-				<Box>
+				<Box sx={{ width: '100%', maxWidth: 500, margin: 2 }}>
 					<Switch {...label} defaultChecked />
 					<Switch {...label} defaultChecked color='secondary' />
 				</Box>
 
-				<Box sx={{ width: '100%', maxWidth: 500 }}>
-					<FormControl sx={{ margin: 1, minWidth: 120 }}>
-						<InputLabel id='demo-simple-select-standard-label'>
-							Test
-						</InputLabel>
-						<Select
-							labelId='demo-simple-select-standard-label'
-							id='demo-simple-select-standard'
-							value={selectValue}
-							label='Test'
-						>
-							<MenuItem value=''>
-								<em>None</em>
-							</MenuItem>
-							<MenuItem value={10}>Ten</MenuItem>
-							<MenuItem value={20}>Twenty</MenuItem>
-							<MenuItem value={30}>Thirty</MenuItem>
-						</Select>
-					</FormControl>
-				</Box>
-
-				<Box sx={{ width: '100%', maxWidth: 500 }}>
+				<Box sx={{ width: '100%', maxWidth: 500, margin: 2 }}>
 					<Typography variant='h1' component='div' gutterBottom>
 						h1. Heading
 					</Typography>
