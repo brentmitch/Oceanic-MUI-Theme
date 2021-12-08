@@ -141,10 +141,26 @@ let oceanicTheme = createTheme({
 					'&.MuiButton-containedPrimary': {
 						background:
 							'linear-gradient(30deg, hsla(204, 100%, 37%, 1) 15%, hsla(211, 86%, 65%, 1) 90%)',
+						'&:hover': {
+							background:
+								'linear-gradient(30deg, hsla(204, 100%, 32%, 1) 15%, hsla(211, 86%, 63%, 1) 90%)',
+						},
 					},
 					'&.MuiButton-containedSecondary': {
 						background:
-							'linear-gradient(30deg, rgba(1, 150, 145, 1) 15%, rgba(83, 199, 193, 1) 90%)',
+							'linear-gradient(30deg, hsla(177, 98%, 29%, 1) 15%, hsla(176, 50%, 55%, 1) 90%)',
+						'&:hover': {
+							background:
+								'linear-gradient(30deg, hsla(177, 98%, 26%, 1) 15%, hsla(176, 50%, 52%, 1) 90%)',
+						},
+					},
+					'&.MuiButton-containedError': {
+						background:
+							'linear-gradient(30deg, hsla(12, 100%, 45%, 1) 15%, hsla(12, 100%, 60%, 1) 90%)',
+						'&:hover': {
+							background:
+								'linear-gradient(30deg, hsla(12, 100%, 42%, 1) 15%, hsla(12, 100%, 57%, 1) 90%)',
+						},
 					},
 				},
 			},
