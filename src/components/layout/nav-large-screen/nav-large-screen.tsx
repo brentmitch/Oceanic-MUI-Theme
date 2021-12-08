@@ -16,13 +16,13 @@ const NavListItem = styled('li')(({ theme }) => ({
 	listStyle: 'none',
 	'&:after': {
 		content: '""',
-		borderBottom: '6px solid #fff',
-		borderRadius: 3,
-		width: '0%',
+		borderBottom: `${theme.spacing(1)} solid transparent`,
+		borderRadius: '50%',
+		width: '0',
 		position: 'absolute',
-		bottom: theme.spacing(0.5),
+		bottom: theme.spacing(0),
 		left: 10,
-		transition: 'all 0.2s cubic-bezier(0.42, 0.16, 0.21, 0.93)',
+		transition: 'all 0.3s cubic-bezier(0.36, 0, 0.66, -0.56)',
 		transformOrigin: 'left center',
 	},
 	'&:hover': {
@@ -31,9 +31,11 @@ const NavListItem = styled('li')(({ theme }) => ({
 			opacity: 0,
 		},
 		'&:after': {
-			width: '30%',
+			width: theme.spacing(4.5),
 			left: theme.spacing(3),
+			bottom: theme.spacing(0.5),
 			borderBottomColor: theme.palette.primary.main,
+			transition: 'all 0.5s cubic-bezier(0.36, 0, 0.66, -0.56)',
 		},
 	},
 	'& button, & a': {
