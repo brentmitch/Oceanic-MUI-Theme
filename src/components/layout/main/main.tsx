@@ -3,6 +3,7 @@ import { styled } from '@mui/system';
 
 const MainWrapper = styled('main')({
 	paddingTop: '100px',
+	paddingBottom: '120px',
 });
 
 const Main: React.FC = ({ children }) => {
