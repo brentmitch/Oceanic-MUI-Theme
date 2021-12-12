@@ -35,7 +35,7 @@ const NavListItem = styled('li')(({ theme }) => ({
 			left: theme.spacing(3),
 			bottom: theme.spacing(0.5),
 			borderBottomColor: theme.palette.primary.main,
-			transition: 'all 0.5s cubic-bezier(0.36, 0, 0.66, -0.56)',
+			transition: 'all 0.2s cubic-bezier(0.36, 0, 0.66, -0.56)',
 		},
 	},
 	'& button, & a': {
