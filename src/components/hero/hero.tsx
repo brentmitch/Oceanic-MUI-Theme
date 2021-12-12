@@ -22,6 +22,7 @@ const Wave = styled('div')({
 		backgroundRepeat: 'repeat',
 		height: '30px',
 		backgroundSize: '180px 30px',
+		backgroundPosition: 'bottom 0 right 0px',
 		backgroundImage:
 			'radial-gradient(ellipse at 90px 0px, transparent 90px, hsla(210, 2%, 99%, 1) 0px)',
 	},
@@ -43,7 +44,30 @@ const Wave50 = styled('div')({
 		right: '0',
 		backgroundRepeat: 'repeat',
 		height: '20px',
-		backgroundPosition: 'bottom 0 right 180px',
+		backgroundPosition: 'bottom 0 right 40px',
+		backgroundSize: '180px 20px',
+		backgroundImage:
+			'radial-gradient(ellipse at 90px 0px, transparent 90px, hsla(210, 2%, 99%, 1) 0px)',
+	},
+});
+
+const Wave30 = styled('div')({
+	fontWeight: 'bold',
+	border: '1px sold black',
+	position: 'absolute',
+	left: '0',
+	bottom: '0',
+	right: '0',
+	opacity: '0.3',
+	'&:before': {
+		content: '""',
+		position: 'absolute',
+		left: '0',
+		bottom: '0',
+		right: '0',
+		backgroundRepeat: 'repeat',
+		height: '20px',
+		backgroundPosition: 'bottom 0 right 80px',
 		backgroundSize: '180px 20px',
 		backgroundImage:
 			'radial-gradient(ellipse at 90px 0px, transparent 90px, hsla(210, 2%, 99%, 1) 0px)',
@@ -66,6 +90,7 @@ const Hero: React.FC<{}> = () => {
 		>
 			<Wave />
 			<Wave50 />
+			<Wave30 />
 			<Container
 				sx={{
 					height: '100%',
