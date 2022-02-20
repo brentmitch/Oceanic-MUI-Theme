@@ -7,8 +7,6 @@ import HeroSearchInput from '../hero-search-input/hero-search-input';
 import { styled } from '@mui/system';
 
 const Wave = styled('div')({
-	fontWeight: 'bold',
-	border: '1px sold black',
 	position: 'absolute',
 	left: '0',
 	bottom: '0',

@@ -1,32 +1,17 @@
 import React from 'react';
 import { Box, Container, Typography } from '@mui/material';
 import { styled } from '@mui/system';
-//import footerBackground from '../../../images/footer-waves.png';
+
 import logo from '../../../images/Turtle-Look.svg';
-import footerWaves from '../../../images/footer-waves-6.svg';
+
+import { FooterWave1, FooterWave3, FooterWave2 } from '../waves';
 
 const FooterContainer = styled('footer')({
 	position: 'relative',
 	width: '100%',
 	margin: 'auto 0 0 0',
 	padding: '0 0 30px 0',
-	backgroundColor: 'hsl(34, 100%, 91%)',
-});
-
-const FooterTopBorder = styled('div')({
-	position: 'absolute',
-	top: '-120px',
-	left: 0,
-	right: 0,
-	zIndex: -1,
-	width: '100%',
-	height: '120px',
-	margin: '0',
-	padding: '0',
-	backgroundImage: `url(${footerWaves})`,
-	backgroundRepeat: 'no-repeat',
-	backgroundSize: '100%',
-	backgroundPosition: 'bottom',
+	backgroundColor: 'rgba(207,234,251,1)',
 });
 
 function Copyright() {
@@ -45,6 +30,9 @@ const LogoImage = styled('img')({
 const Footer: React.FC = () => {
 	return (
 		<FooterContainer>
+			<FooterWave2 />
+			<FooterWave3 />
+			<FooterWave1 />
 			<Container>
 				<Box sx={{ display: 'flex', alignItems: 'center' }}>
 					<LogoImage src={logo} alt='Oceanic' />
@@ -58,7 +46,6 @@ const Footer: React.FC = () => {
 				</Box>
 				<Copyright />
 			</Container>
-			<FooterTopBorder />
 		</FooterContainer>
 	);
 };

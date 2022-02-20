@@ -15,7 +15,7 @@ const Home: React.FC = () => {
 
 	return (
 		<>
-			<Hero />
+			{/* <Hero /> */}
 			<Container>
 				<Box sx={{ width: '100%', margin: 2 }}>
 					<Stack spacing={2} direction='row'>

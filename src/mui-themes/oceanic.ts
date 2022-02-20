@@ -79,8 +79,39 @@ let oceanicTheme = createTheme({
 		MuiCssBaseline: {
 			styleOverrides: {
 				body: {
+					position: 'relative',
 					height: '100vh',
 					backgroundColor: 'hsla(210, 2%, 99%, 1)',
+					background:
+						'linear-gradient(hsla(210, 2%, 99%, 1), hsla(210, 2%, 99%, 1) 30px, rgb(207,234,251) 30px, hsla(210, 2%, 99%, 1) 300px)',
+					backgroundRepeat: 'no-repeat',
+					'&::before': {
+						content: '""',
+						position: 'absolute',
+						left: '0',
+						top: '0',
+						right: '0',
+						backgroundRepeat: 'repeat',
+						height: '30px',
+						backgroundSize: '180px 30px',
+						backgroundPosition: 'bottom 0 right 0px',
+						backgroundImage:
+							'radial-gradient(ellipse at 90px 0px, transparent 90px, rgba(207,234,251,1) 0px)',
+					},
+					'&::after': {
+						content: '""',
+						position: 'absolute',
+						left: '0',
+						top: '10px',
+						right: '0',
+						opacity: '0.5',
+						backgroundRepeat: 'repeat',
+						height: '24px',
+						backgroundSize: '180px 24px',
+						backgroundPosition: 'bottom 0 right 118px',
+						backgroundImage:
+							'radial-gradient(ellipse at 90px 0px, transparent 90px, rgba(207,234,251,1) 0px)',
+					},
 				},
 				'#root': {
 					display: 'flex',

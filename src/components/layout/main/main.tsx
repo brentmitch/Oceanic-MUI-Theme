@@ -2,7 +2,8 @@ import React from 'react';
 import { styled } from '@mui/system';
 
 const MainWrapper = styled('main')({
-	paddingTop: '100px',
+	position: 'relative',
+	paddingTop: '120px',
 	paddingBottom: '120px',
 });
 
