@@ -9,13 +9,41 @@ import {
 	Typography,
 } from '@mui/material';
 import Hero from '../../components/hero/hero';
+import HeroSearchInput from '../../components/hero-search-input/hero-search-input';
+import heroImageSrc from '.././../images/sea-turtle-close-kris-mikael-unsplash.jpg';
 
 const Home: React.FC = () => {
 	const label = { inputProps: { 'aria-label': 'Checkbox demo' } };
 
 	return (
 		<>
-			{/* <Hero /> */}
+			<Hero
+				color='white'
+				backgroundImage={`url("${heroImageSrc}")`}
+				marginBottom={6}
+			>
+				<Box
+					sx={{
+						paddingTop: 9,
+						paddingLeft: 10,
+						maxWidth: '50%',
+						height: '310px',
+					}}
+				>
+					<Typography
+						variant='h3'
+						component='h1'
+						sx={{ fontWeight: '200', fontSize: '2.2rem' }}
+						gutterBottom
+					>
+						Underwater adventure awaits
+					</Typography>
+					<HeroSearchInput
+						width='90%'
+						placeholderText='Search for a wonder'
+					/>
+				</Box>
+			</Hero>
 			<Container>
 				<Box sx={{ width: '100%', margin: 2 }}>
 					<Stack spacing={2} direction='row'>

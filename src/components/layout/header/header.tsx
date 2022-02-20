@@ -13,7 +13,7 @@ interface Props {
 export const HeaderBackground = styled('div')({
 	background: 'linear-gradient(rgb(207,234,251), hsla(210, 2%, 99%, 1) 70px)',
 	boxShadow:
-		'hsla(211, 86%, 65%, 0.4) 0px 10px 15px -10px, hsla(178, 100%, 20%, 0.5) 0px 10px 30px -10px',
+		'hsla(211, 86%, 65%, 0.4) 0px 10px 15px -10px, hsla(178, 100%, 20%, 0.5) 0px 5px 20px -10px',
 	position: 'fixed',
 	top: '0',
 	left: '0',
@@ -33,7 +33,6 @@ function AppBarStylesOnScroll(props: Props) {
 	});
 
 	return React.cloneElement(children, {
-		elevation: pageScrollTrigger ? 2 : 0,
 		sx: pageScrollTrigger
 			? {
 					background: 'transparent',
@@ -56,14 +55,12 @@ const Header: React.FC = () => {
 		threshold: 0,
 	});
 
-	console.log(scrollTrigger);
-
 	const theme = useTheme();
 	const isSmallScreen = useMediaQuery(theme.breakpoints.down('md'));
 	return (
 		<React.Fragment>
 			<AppBarStylesOnScroll>
-				<AppBar position='fixed'>
+				<AppBar position='fixed' elevation={0}>
 					<Container>
 						<Box
 							sx={{

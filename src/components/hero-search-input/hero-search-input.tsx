@@ -3,11 +3,19 @@ import React from 'react';
 import { InputBase, InputAdornment } from '@mui/material';
 import SearchIcon from '@mui/icons-material/Search';
 
-const HeroSearchInput: React.FC<{}> = () => {
+type Props = {
+	width?: string;
+	placeholderText?: string;
+};
+
+const HeroSearchInput: React.FC<Props> = ({
+	width = '100%',
+	placeholderText,
+}) => {
 	return (
 		<InputBase
 			sx={{
-				width: '100%',
+				width: width,
 				background: 'white',
 				padding: '6px',
 				borderRadius: '24px',
@@ -22,9 +30,9 @@ const HeroSearchInput: React.FC<{}> = () => {
 					<SearchIcon />
 				</InputAdornment>
 			}
-			placeholder='Search for a wonder'
+			placeholder={placeholderText}
 			inputProps={{
-				'aria-label': 'Search for a wonder',
+				'aria-label': placeholderText,
 			}}
 		/>
 	);
