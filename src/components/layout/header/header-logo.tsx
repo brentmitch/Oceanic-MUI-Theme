@@ -24,7 +24,7 @@ const HeaderLogo: React.FC = () => {
 			>
 				<LogoImage src={logo} alt='Oceanic' />
 				<Typography variant='h4' component='h1' color='text.primary'>
-					Oceanic
+					Oceanic Theme
 				</Typography>
 			</Box>
 		</LogoLink>

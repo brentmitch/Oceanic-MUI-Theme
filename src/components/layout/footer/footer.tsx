@@ -41,7 +41,7 @@ const Footer: React.FC = () => {
 						component='div'
 						color='textSecondary'
 					>
-						Oceanic
+						Oceanic Theme
 					</Typography>
 				</Box>
 				<Copyright />
