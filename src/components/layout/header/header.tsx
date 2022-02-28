@@ -1,4 +1,4 @@
-import React from 'react';
+import { ReactElement, cloneElement } from 'react';
 import { AppBar, Box, Container, useMediaQuery, useTheme } from '@mui/material';
 import { styled } from '@mui/system';
 import useScrollTrigger from '@mui/material/useScrollTrigger';
@@ -7,7 +7,7 @@ import NavLargeScreen from '../nav-large-screen/nav-large-screen';
 import NavSmallScreen from '../nav-small-screen/nav-small-screen';
 
 interface Props {
-	children: React.ReactElement;
+	children: ReactElement;
 }
 
 export const HeaderBackground = styled('div')({
@@ -32,7 +32,7 @@ function AppBarStylesOnScroll(props: Props) {
 		threshold: 0,
 	});
 
-	return React.cloneElement(children, {
+	return cloneElement(children, {
 		sx: pageScrollTrigger
 			? {
 					background: 'transparent',
@@ -51,7 +51,7 @@ function AppBarStylesOnScroll(props: Props) {
 	});
 }
 
-const Header: React.FC = () => {
+const Header = (): ReactElement | null => {
 	const scrollTrigger = useScrollTrigger({
 		disableHysteresis: true,
 		threshold: 0,
@@ -60,7 +60,7 @@ const Header: React.FC = () => {
 	const theme = useTheme();
 	const isSmallScreen = useMediaQuery(theme.breakpoints.down('md'));
 	return (
-		<React.Fragment>
+		<>
 			<AppBarStylesOnScroll>
 				<AppBar position='fixed' elevation={0}>
 					<Container>
@@ -87,7 +87,7 @@ const Header: React.FC = () => {
 					></HeaderBackground>
 				</AppBar>
 			</AppBarStylesOnScroll>
-		</React.Fragment>
+		</>
 	);
 };
 

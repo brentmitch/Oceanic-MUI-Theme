@@ -1,4 +1,4 @@
-import React from 'react';
+import { ReactNode } from 'react';
 import { styled } from '@mui/system';
 
 const MainWrapper = styled('main')({
@@ -7,7 +7,7 @@ const MainWrapper = styled('main')({
 	paddingBottom: '120px',
 });
 
-const Main: React.FC = ({ children }) => {
+const Main = ({ children }: { children: ReactNode }) => {
 	return <MainWrapper>{children}</MainWrapper>;
 };
 

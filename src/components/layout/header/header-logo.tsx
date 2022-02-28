@@ -1,9 +1,8 @@
-import React from 'react';
 import { styled } from '@mui/system';
 import { Box, Typography } from '@mui/material';
 import logo from '../../../images/Turtle-Look.svg';
 
-const HeaderLogo: React.FC = () => {
+const HeaderLogo = () => {
 	const LogoLink = styled('a')({
 		textDecoration: 'none',
 	});
