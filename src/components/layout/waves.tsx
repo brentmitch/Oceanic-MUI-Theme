@@ -1,4 +1,5 @@
-import { styled } from '@mui/system';
+import { styled } from '@mui/material/styles';
+import { CSSObject } from '@mui/material';
 
 interface customizableWaveStyles {
 	backgroundSize: string;
@@ -7,10 +8,10 @@ interface customizableWaveStyles {
 	height: string;
 	opacity: string;
 	top: string;
-	zIndex: string;
+	zIndex: number;
 }
 
-const makeWaveStyles: any = ({
+const makeWaveStyles = ({
 	backgroundSize,
 	backgroundPosition,
 	backgroundEndingColor,
@@ -18,7 +19,7 @@ const makeWaveStyles: any = ({
 	opacity,
 	top,
 	zIndex,
-}: customizableWaveStyles) => ({
+}: customizableWaveStyles): CSSObject => ({
 	position: 'absolute',
 	left: '0',
 	top,
@@ -47,7 +48,7 @@ export const FooterWave1 = styled('div')(
 		height: '30px',
 		opacity: '1',
 		top: '0',
-		zIndex: '0',
+		zIndex: 0,
 	})
 );
 
@@ -59,7 +60,7 @@ export const FooterWave2 = styled('div')(
 		height: '20px',
 		opacity: '0.5',
 		top: '0',
-		zIndex: '0',
+		zIndex: 0,
 	})
 );
 
@@ -71,6 +72,6 @@ export const FooterWave3 = styled('div')(
 		height: '20px',
 		opacity: '0.7',
 		top: '0',
-		zIndex: '0',
+		zIndex: 0,
 	})
 );
