@@ -38,12 +38,14 @@ function AppBarStylesOnScroll(props: Props) {
 					background: 'transparent',
 					paddingTop: '10px',
 					paddingBottom: '10px',
+					backdropFilter: 'blur(10px)',
 					transition: 'all 0.35s ease-out',
 			  }
 			: {
 					background: 'transparent',
 					paddingTop: '20px',
 					paddingBottom: '20px',
+					backdropFilter: 'blur(0)',
 					transition: 'all 0.35s ease-in',
 			  },
 	});
@@ -79,7 +81,7 @@ const Header: React.FC = () => {
 					</Container>
 					<HeaderBackground
 						sx={{
-							opacity: scrollTrigger ? '1' : '0',
+							opacity: scrollTrigger ? '0.75' : '0',
 							height: scrollTrigger ? '80px' : '100px',
 						}}
 					></HeaderBackground>
