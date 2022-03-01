@@ -51,7 +51,7 @@ const NavListItem = styled('li')(({ theme }) => ({
 	},
 }));
 
-const NavLargeScreen: React.FC = () => {
+const NavLargeScreen = () => {
 	return (
 		<nav>
 			<NavList>

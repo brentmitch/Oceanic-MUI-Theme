@@ -4,21 +4,9 @@ import {
 	TextValidator,
 	SelectValidator,
 } from 'react-material-ui-form-validator';
+import { Button, Grid, MenuItem } from '@mui/material';
 
-import {
-	Button,
-	Checkbox,
-	Grid,
-	InputLabel,
-	MenuItem,
-	Select,
-	Stack,
-	Switch,
-	TextField,
-	Typography,
-} from '@mui/material';
-
-const ContactForm: React.FC<{}> = () => {
+const ContactForm = () => {
 	const [formValues, setFormValues] = React.useState({
 		firstName: '',
 		lastName: '',
@@ -28,24 +16,22 @@ const ContactForm: React.FC<{}> = () => {
 	});
 
 	React.useEffect(() => {
-		ValidatorForm.addValidationRule('isTruthy', (value: any) => value);
+		ValidatorForm.addValidationRule('isTruthy', (value) => value);
 	});
 
 	const handleChange =
-		(name: any) => (event: React.ChangeEvent<HTMLInputElement>) => {
+		(name: string) => (event: React.ChangeEvent<HTMLInputElement>) => {
 			setFormValues({ ...formValues, [name]: event.target.value });
 		};
 
 	const handleSubmit = () => {
+		//TODO: Display Thank You Message
 		console.log('submitted');
 	};
 
 	return (
 		<>
-			<ValidatorForm
-				onSubmit={handleSubmit}
-				onError={(errors: any) => console.log(errors)}
-			>
+			<ValidatorForm onSubmit={handleSubmit}>
 				<Grid container spacing={6}>
 					<Grid item sm={6} xs={12}>
 						<TextValidator

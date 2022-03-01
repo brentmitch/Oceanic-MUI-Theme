@@ -26,7 +26,7 @@ const MenuWrapper = styled('nav')(({ theme }) => ({
 	},
 }));
 
-const NavSmallScreen: React.FC = () => {
+const NavSmallScreen = () => {
 	const [openDrawer, setOpenDrawer] = useState(false);
 	return (
 		<>
