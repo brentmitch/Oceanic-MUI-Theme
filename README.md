@@ -4,10 +4,10 @@ A bright ocean day inspired React Material UI theme.
 
 ## Features
 
--   [React Material UI (MUI) 5](https://mui.com/)
--   [Sora Font](https://fonts.google.com/specimen/Sora)
+-   [React Material UI (MUI 5)](https://mui.com/)
+-   [Typescript](https://www.typescriptlang.org/)
 -   [React Router 6](https://reactrouter.com/)
--   Typescript
+-   [Sora Font](https://fonts.google.com/specimen/Sora)
 
 ## Available Scripts
 
