@@ -170,8 +170,7 @@ let oceanicTheme = createTheme({
 					// apply theme's border-radius instead of component's default
 					borderRadius: 16,
 					'&.MuiButton-containedPrimary': {
-						background:
-							'linear-gradient(30deg, hsla(204, 100%, 37%, 1) 15%, hsla(211, 86%, 65%, 1) 90%)',
+						background: `linear-gradient(30deg, hsla(204, 100%, 37%, 1) 15%, hsla(211, 86%, 65%, 1) 90%)`,
 						'&:hover': {
 							background:
 								'linear-gradient(30deg, hsla(204, 100%, 32%, 1) 15%, hsla(211, 86%, 63%, 1) 90%)',

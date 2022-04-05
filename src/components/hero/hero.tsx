@@ -1,11 +1,12 @@
 import React from 'react';
-
-import { Box, Container } from '@mui/material';
+import HeroWrapper from './hero-wrapper';
+import HeroWrapperFullWidth from './hero-wrapper-fullwidth';
 
 type Props = {
 	bgcolor?: string;
 	backgroundImage?: string;
 	color?: string;
+	fullWidth?: boolean;
 	marginTop?: number;
 	marginBottom?: number;
 };
@@ -15,29 +16,34 @@ const Hero: React.FC<Props> = ({
 	backgroundImage,
 	children,
 	color,
+	fullWidth = false,
 	marginTop = 1,
 	marginBottom = 1,
 }) => {
-	console.log(bgcolor, backgroundImage, color, marginTop, marginBottom);
 	return (
-		<Container>
-			<Box
-				sx={{
-					bgcolor,
-					borderRadius: 2,
-					backgroundImage,
-					backgroundSize: 'cover',
-					backgroundPosition: 'center',
-					color,
-					marginTop,
-					marginBottom,
-					position: 'relative',
-					width: '100%',
-				}}
-			>
-				{children}
-			</Box>
-		</Container>
+		<>
+			{fullWidth ? (
+				<HeroWrapperFullWidth
+					bgcolor={bgcolor}
+					backgroundImage={backgroundImage}
+					color={color}
+					marginTop={marginTop}
+					marginBottom={marginBottom}
+				>
+					{children}
+				</HeroWrapperFullWidth>
+			) : (
+				<HeroWrapper
+					bgcolor={bgcolor}
+					backgroundImage={backgroundImage}
+					color={color}
+					marginTop={marginTop}
+					marginBottom={marginBottom}
+				>
+					{children}
+				</HeroWrapper>
+			)}
+		</>
 	);
 };
 
