@@ -1,5 +1,6 @@
 import { Box, Button, Container, Grid, Typography } from '@mui/material';
 import Hero from '../../components/hero/hero';
+import oceanLifeSilhouette from '.././../images/ocean-life-silhouette.svg';
 
 const About = () => {
 	return (
@@ -7,7 +8,8 @@ const About = () => {
 			<Hero
 				bgcolor='#101c2f'
 				color='#d3e8f9'
-				marginTop={4}
+				marginTop={6}
+				marginBottom={6}
 				fullWidth={true}
 			>
 				<Grid container spacing={2} sx={{ padding: 3 }}>
@@ -34,8 +36,12 @@ const About = () => {
 							Learn More
 						</Button>
 					</Grid>
-					<Grid item xs={3}>
-						[Editorial Image Here]
+					<Grid item xs={3} style={{ textAlign: 'right' }}>
+						<img
+							src={oceanLifeSilhouette}
+							style={{ height: '100%', maxHeight: '230px' }}
+							alt='Ocean Life'
+						/>
 					</Grid>
 				</Grid>
 			</Hero>
